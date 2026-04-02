@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:8080";
+const BASE_URL = "https://campus-lost-found-hxfp.onrender.com";
 
 export const addItem = (item) =>
   axios.post(BASE_URL + "/add", item);
@@ -9,7 +9,18 @@ export const matchItems = (name, status) =>
   axios.get(`${BASE_URL}/match?name=${name}&status=${status}`);
 
 export const resolveItem = (id) =>
-  axios.put(`http://localhost:8080/resolve/${id}`);
+  axios.put(`${BASE_URL}/resolve/${id}`);// import axios from "axios";
+
+// const BASE_URL = "http://localhost:8080";
+
+// export const addItem = (item) =>
+//   axios.post(BASE_URL + "/add", item);
+
+// export const matchItems = (name, status) =>
+//   axios.get(`${BASE_URL}/match?name=${name}&status=${status}`);
+
+// export const resolveItem = (id) =>
+//   axios.put(`http://localhost:8080/resolve/${id}`);
 
 // import axios from "axios";
 
@@ -20,3 +31,7 @@ export const resolveItem = (id) =>
 
 // export const matchItems = (name, status) =>
 //   axios.get(`${BASE_URL}/match?name=${name}&status=${status}`);
+
+
+
+
