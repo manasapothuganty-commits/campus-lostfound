@@ -1,35 +1,80 @@
-
 import React, { useState } from "react";
 import AddItem from "./AddItem";
 import MatchList from "./MatchList";
 
 function App(){
-
   const [matches, setMatches] = useState([]);
   const [userItem, setUserItem] = useState(null);
+  const [searched, setSearched] = useState(false);
 
   return (
     <div style={{
-  padding:"20px",
-  maxWidth:"500px",
-  margin:"auto",
-  fontFamily:"Arial",
-  textAlign:"center"
-}}>
+      minHeight:"100vh",
+      background:"#f4f6f8",
+      padding:"30px",
+      fontFamily:"Segoe UI",
+      textAlign:"center"
+    }}>
 
-      <h1>Digital Lost & Found System</h1>
+      <h1 style={{color:"#2c3e50"}}>
+        Campus Lost & Found System
+      </h1>
 
-      <AddItem setMatches={setMatches} setUserItem={setUserItem} />
+      {!searched && (
+        <AddItem 
+          setMatches={setMatches} 
+          setUserItem={setUserItem}
+          setSearched={setSearched}
+        />
+      )}
 
-      <hr/>
-
-      <MatchList matches={matches} userItem={userItem} />
+      {searched && (
+        <MatchList 
+          matches={matches} 
+          userItem={userItem}
+          setSearched={setSearched}
+        />
+      )}
 
     </div>
   );
 }
-
 export default App;
+
+
+
+
+// import React, { useState } from "react";
+// import AddItem from "./AddItem";
+// import MatchList from "./MatchList";
+
+// function App(){
+
+//   const [matches, setMatches] = useState([]);
+//   const [userItem, setUserItem] = useState(null);
+
+//   return (
+//     <div style={{
+//   padding:"20px",
+//   maxWidth:"500px",
+//   margin:"auto",
+//   fontFamily:"Arial",
+//   textAlign:"center"
+// }}>
+
+//       <h1>Digital Lost & Found System</h1>
+
+//       <AddItem setMatches={setMatches} setUserItem={setUserItem} />
+
+//       <hr/>
+
+//       <MatchList matches={matches} userItem={userItem} />
+
+//     </div>
+//   );
+// }
+
+// export default App;
 
 
 
